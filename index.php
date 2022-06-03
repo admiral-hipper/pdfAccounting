@@ -27,7 +27,7 @@ use Dompdf\Dompdf;
                 <div class="row">
                     <input type="hidden" value="1" name="insert">
                     <input class="form-control mt-4" type="text" name="name" id="" placeholder="Name">
-                    <input class="form-control mt-4" type="number" name="serial-number" placeholder="Serial number" id="">
+                    <input class="form-control mt-4" type="text" name="serial-number" placeholder="Serial number" id="">
                     <input class="form-control mt-4" type="number" name="room" id="" placeholder="Room">
                     <input class="form-control mt-4" type="text" name="owner" id="" placeholder="Owner">
                     <input class="btn btn-info mt-2 col-3" type="submit" value="Sumbit">
@@ -50,10 +50,10 @@ use Dompdf\Dompdf;
                 $db->exec("CREATE TABLE IF NOT EXISTS Questionnaire (
                 id BIGINT AUTO_INCREMENT PRIMARY KEY,
                 name VARCHAR(128) NOT NULL,
-                serial_number INT NOT NULL,
+                serial_number VARCHAR(128) NOT NULL,
                 room INT NOT NULL,
                 owner VARCHAR(128),
-                INDEX(serial_number),
+                INDEX(serial_number(30)),
                 INDEX(room),
                 INDEX(owner(20)))ENGINE=InnoDB;");
             }
