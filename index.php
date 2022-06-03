@@ -130,7 +130,7 @@ use Dompdf\Dompdf;
                     </tr>
                 </thead>
                 <tbody>
-                    <?php while ($row = $rows->fetch(PDO::FETCH_OBJ)) { ?>
+                    <?php if($rows) while ($row = $rows->fetch(PDO::FETCH_OBJ)) { ?>
                         <tr>
                             <td><?php echo $row->name; ?></td>
                             <td><?php echo $row->serial_number; ?></td>
