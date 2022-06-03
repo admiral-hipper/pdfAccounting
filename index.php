@@ -1,6 +1,6 @@
 <?php
 require_once 'vendor/autoload.php';
-define('DB_HOST',"lovalhost");
+define('DB_HOST',"localhost");
 define('DB_NAME',"Dots");
 define('DB_USER','Mikhail');
 define('DB_PASSWORD','password');
