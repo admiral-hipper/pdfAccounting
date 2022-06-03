@@ -63,7 +63,7 @@ use Dompdf\Dompdf;
             if (isset($_POST['name']) && isset($_POST['serial-number']) && isset($_POST['room']) && isset($_POST['owner'])) {
                 $sth = $db->prepare("INSERT INTO Questionnaire VALUES(NULL,?,?,?,?);");
                 $sth->bindParam(1, $_POST['name'], PDO::PARAM_STR);
-                $sth->bindParam(2, $_POST['serial-number'], PDO::PARAM_INT);
+                $sth->bindParam(2, $_POST['serial-number'], PDO::PARAM_STR);
                 $sth->bindParam(3, $_POST['room'], PDO::PARAM_INT);
                 $sth->bindParam(4, $_POST['owner'], PDO::PARAM_STR);
                 $result = $sth->execute();
